@@ -7,7 +7,7 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 int firstDigit = 1;
 
-while (number > firstDigit)
+while (number >= firstDigit)
 {
     if (firstDigit % 2 == 0)
     Console.Write($"{firstDigit}, ");
