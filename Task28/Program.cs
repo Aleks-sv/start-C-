@@ -25,9 +25,9 @@ int FindFactorial(int num)
         }
         catch (Exception)
         {
-            Console,WriteLine("Переполнение типа");
+            Console.WriteLine("Переполнение типа");
         }
-       Console,WriteLine($"Факториа числа {number} = {factorial}");
+       Console.WriteLine($"Факториа числа {number} = {factorial}");
     }
     return factorial;
 
