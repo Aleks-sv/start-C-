@@ -36,7 +36,7 @@ int FindSumOdd (int[] array)
     return sum;
 }
 
-int[] arr = CreateArrayRndInt(5, -10, 10);
+int[] arr = CreateArrayRndInt(8, -10, 10);
 PrintArray(arr);
 
 int findSumOdd = FindSumOdd(arr);
