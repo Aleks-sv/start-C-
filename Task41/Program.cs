@@ -34,8 +34,8 @@ void PrintArray(int[] array)
     Console.Write("]");
 }
 
-int coun1 = FindPositiveNumbers(array);
+int findPositiveNumbers = FindPositiveNumbers(array);
 PrintArray(array);
-Console.Write($" -> {coun1}");
+Console.Write($" -> {findPositiveNumbers}");
 
 
