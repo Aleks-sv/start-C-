@@ -61,8 +61,11 @@ int SumElement2(int[,] matrix)
     return sum;
 }
 
-int[,] matr = CreateMatrixRndInt(5, 6, 1, 10);
+int[,] matr = CreateMatrixRndInt(3, 4, 1, 10);
 PrintMatrix(matr);
-
+Console.WriteLine();
 int sumElement = SumElement2(matr);
 Console.WriteLine(sumElement);
+Console.WriteLine();
+int sumElementSecond = SumElement(matr);
+Console.WriteLine(sumElementSecond);

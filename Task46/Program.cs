@@ -5,9 +5,9 @@
 // 5 -2 33 -2
 // // 77 3 8 1
 
-int[,] CreateMatrixRndInt(int rows, int colums, int min, int max)
+int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
-    var matrix = new int[rows, colums];
+    var matrix = new int[rows, columns];
     var rnd = new Random();
 
     for (int i = 0; i < matrix.GetLength(0); i++)
