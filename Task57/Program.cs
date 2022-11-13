@@ -3,6 +3,16 @@
 // информацию о том, сколько раз встречается элемент
 // входных данных.
 
+int[,] matrix = CreateMatrixRndInt(3, 3, 1, 6);
+PrintMatrix(matrix);
+Console.WriteLine();
+int[] array = CreateArray(matrix);
+PrintArray(array);
+Console.WriteLine();
+Console.WriteLine();
+CountElements(array);
+
+
 int[,] CreateMatrixRndInt (int rows, int colums, int min, int max)
 {
     var matrix = new int[rows, colums];
@@ -43,13 +53,27 @@ void PrintArray(int[] array)
     Console.Write("]");
 }
 
-
+void CountElements(int[] array)
+{
+    int maxElement = array[0];
+    int count = 1;
+    for (int i = 1; i < array.Length; i++)
+    {
+        if (array[i]==maxElement) count++;
+        else
+        {
+            Console.WriteLine($"{maxElement} встречается в массива {count} раз");
+            maxElement = array[i];
+            count = 1;
+        }
+    }
+    Console.WriteLine($"{maxElement} встречается в массива {count} раз");
+}
 
 int[] CreateArray(int[,] matrix)
 {
-    int array = new int[matrix.Length];
+    int[] array = new int[matrix.Length];
     int k = 0;
-
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
@@ -61,8 +85,3 @@ int[] CreateArray(int[,] matrix)
     Array.Sort(array);
     return array;
 }
-
-int[,] matrix = CreateMatrixRndInt(3, 3, 1, 6);
-PrintMatrix(matrix);
-int[] array = CreateArray(matrix);
-PrintArray(array);
