@@ -13,7 +13,7 @@ Console.WriteLine();
 CountElements(array);
 
 
-int[,] CreateMatrixRndInt (int rows, int colums, int min, int max)
+int[,] CreateMatrixRndInt(int rows, int colums, int min, int max)
 {
     var matrix = new int[rows, colums];
     var rnd = new Random();
@@ -35,8 +35,8 @@ void PrintMatrix(int[,] matrix)
         Console.Write("[");
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j], 4}, ");
-            else Console.Write($"{matrix[i, j], 4}");
+            if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j],4}, ");
+            else Console.Write($"{matrix[i, j],4}");
         }
         Console.WriteLine("]");
     }
@@ -47,7 +47,7 @@ void PrintArray(int[] array)
     Console.Write("[");
     for (int i = 0; i < array.Length; i++)
     {
-        if(i < array.Length - 1) Console.Write($"{array[i]}, ");
+        if (i < array.Length - 1) Console.Write($"{array[i]}, ");
         else Console.Write($"{array[i]}");
     }
     Console.Write("]");
@@ -59,7 +59,7 @@ void CountElements(int[] array)
     int count = 1;
     for (int i = 1; i < array.Length; i++)
     {
-        if (array[i]==maxElement) count++;
+        if (array[i] == maxElement) count++;
         else
         {
             Console.WriteLine($"{maxElement} встречается в массива {count} раз");
