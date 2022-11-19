@@ -38,7 +38,7 @@ void PrintArray(int[] array)
     Console.Write("[");
     for (int i = 0; i < array.Length; i++)
     {
-        if(i < array.Length - 1) Console.Write($"{array[i]}, ");
+        if (i < array.Length - 1) Console.Write($"{array[i]}, ");
         else Console.Write($"{array[i]}");
     }
     Console.WriteLine("]");
@@ -49,41 +49,43 @@ int[] FindMinMaxIndex(int[,] matrix)
     int minElement = matrix[0, 0];
     int minRow = 0;
     int minColumn = 0;
-    for (int i = 1; i < matrix.GetLength(0); i++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for (int j = 1; j < matrix.GetLength(1); j++)
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if (matrix[i, j] < minElement) 
+            if (matrix[i, j] <= minElement)
             {
-            minElement = matrix[i, j];
-            minRow = i;
-            minColumn = j;
+                minElement = matrix[i, j];
+                minRow = i;
+                minColumn = j;
             }
         }
     }
-    return new int[] {minElement, minRow, minColumn};
+    return new int[] { minElement, minRow, minColumn };
 }
 
-// int[,] CreateResultMatrix(int[,] matrix, int[] array)
-// {
-//     for (int i = 0; i < matrix.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < matrix.GetLength(1); j++)
-//         {
-//             if(i == && j == findMinElement[2]) matrix[i, j];
-//         }
-//     }
-//     return matrix;
-// }
+int[,] CreateResultMatrix(int[,] matrix, int[] array)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
 
-int[,] matrix = CreateMatrixRndInt(4, 4, 1, 6);
+            //matrix[i, j] = matrix[i, j];
+            if (array[1] == matrix.GetLength(i))
+            {
+               matrix[i, j] = matrix[matrix.GetLength(i), j];
+            }
+        }
+    }
+    return matrix;
+}
+
+int[,] matrix = CreateMatrixRndInt(3, 3, 0, 6);
 PrintMatrix(matrix);
 Console.WriteLine();
 int[] findMinMaxIndex = FindMinMaxIndex(matrix);
 PrintArray(findMinMaxIndex);
 Console.WriteLine();
-// int[,] resultMatrix = CreateResultMatrix(matrix, findMinElement);
-// PrintMatrix(resultMatrix);
-// Console.WriteLine($"{findMinElement[0]}");
-// Console.WriteLine($"{findMinElement[1]}");
-// Console.WriteLine($"{findMinElement[2]}");
+int[,] resultMatrix = CreateResultMatrix(matrix, findMinMaxIndex);
+PrintMatrix(resultMatrix);
